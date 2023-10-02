@@ -1,7 +1,6 @@
 //import jobs from "./data/data";
 import { magicNumber } from "./utility/utility";
-import { jobs, tanks, healers, melee, ranged, magic } from "./data/data";
-import { DPS } from "./data/DPS";
+import { jobs, tanks, healers, DPS, melee, ranged, magic } from "./data/data";
 import { useState } from "react";
 import AllRounderIco from "./FFXIVIconsJobIcons/All-Rounder_Icon_1.png";
 import DPSIco from "./FFXIVIconsJobIcons/00_ROLE/DPSRole.png";
@@ -13,54 +12,59 @@ import HealerIco from "./FFXIVIconsJobIcons/00_ROLE/HealerRole.png";
 import meteor from "./FFXIVMeteo.svg";
 
 export default function RandomJob() {
-  const [index, setIndex] = useState(magicNumber(18, 0));
+  const [index, setIndex] = useState(0);
   const [vis, setVis] = useState(false);
   const [first, isFirst] = useState(true);
   const [jobType, setJobType] = useState("");
-  const [jobArray, setJobArray] = useState(DPS);
+  const [jobArray, setJobArray] = useState(jobs);
 
   function handleRandomclick() {
     setVis(true);
     isFirst(false);
+
+    let randomNumber = 0;
     switch (jobType) {
+      case "any":
+        randomNumber = magicNumber(18, 0);
+        setIndex(randomNumber);
+        break;
       case "DPS":
         setIndex(magicNumber(10, 0)); /*18, 8*/
         break;
-      case "melee":
+      case "Melee":
         setIndex(magicNumber(4, 0)); /*12, 8*/
         break;
-      case "ranged":
+      case "Ranged":
         setIndex(magicNumber(2, 0)); /*15, 13 */
         break;
-      case "magic":
+      case "Magic":
         setIndex(magicNumber(2, 0)); /*18, 16 */
         break;
-      case "tank":
+      case "Tank":
         setIndex(magicNumber(3, 0)); /* */
         break;
-      case "healer":
+      case "Healer":
         setIndex(magicNumber(3, 0)); /* 7, 4*/
         break;
       default:
-        setIndex(magicNumber(18, 0));
         break;
     }
     /*if (jobType === "DPS") {
       setIndex(magicNumber(10, 0));
-    } else if (jobType === "melee") {
+    } else if (jobType === "Melee") {
       setIndex(magicNumber(4, 0));
-    } else if (jobType === "ranged") {
+    } else if (jobType === "Ranged") {
       setIndex(magicNumber(2, 0));
-    } else if (jobType === "magic") {
+    } else if (jobType === "Magic") {
       setIndex(magicNumber(2, 0));
-    } else if (jobType === "tank") {
+    } else if (jobType === "Tank") {
       setIndex(magicNumber(3, 0));
-    } else if (jobType === "healer") {
+    } else if (jobType === "Healer") {
       setIndex(Math.floor(Math.random() * 3) + 0);
     } else {
       setIndex(magicNumber(18, 0));
     }*/
-    console.log("clicked roll", jobType, index);
+    console.log("clicked roll", jobType, index, jobArray);
   }
 
   return (
@@ -69,24 +73,18 @@ export default function RandomJob() {
       <h2 style={{ visibility: vis ? "visible" : "hidden" }} id="subheader">
         {jobArray[index].jobName}
       </h2>
-      <img
-        /*style={{visibility: vis ? "visible" : "hidden"}}*/ src={
-          first ? meteor : jobArray[index].jobIcon
-        }
-        alt=""
-        id="emblem"
-      />
+      <img src={first ? meteor : jobArray[index].jobIcon} alt="" id="emblem" />
       <button onClick={handleRandomclick}>
         {!jobType
           ? "Please pick a category first"
           : first
-          ? `Roll for ${jobType}`
-          : "Try again for a different job"}
+          ? `Roll for ${jobType} job`
+          : `Try again for a different ${jobType} job`}
       </button>
       <div className="jobTypes">
         <button
           onClick={() => {
-            setJobType("all"), setJobArray(jobs);
+            setJobType("any"), setJobArray(jobs);
           }}
         >
           <img src={AllRounderIco} title="Allrounder" />
@@ -101,35 +99,35 @@ export default function RandomJob() {
         </button>
         <button
           onClick={() => {
-            setJobType("melee"), setJobArray(melee);
+            setJobType("Melee"), setJobArray(melee);
           }}
         >
           <img src={MeleeIco} title="Melee" />
         </button>
         <button
           onClick={() => {
-            setJobType("ranged"), setJobArray(ranged);
+            setJobType("Ranged"), setJobArray(ranged);
           }}
         >
           <img src={RangedIco} title="Ranged" />
         </button>
         <button
           onClick={() => {
-            setJobType("magic"), setJobArray(magic);
+            setJobType("Magic"), setJobArray(magic);
           }}
         >
           <img src={MagicIco} title="Magic" />
         </button>
         <button
           onClick={() => {
-            setJobType("tank"), setJobArray(tanks);
+            setJobType("Tank"), setJobArray(tanks);
           }}
         >
           <img src={TankIco} title="Tank" />
         </button>
         <button
           onClick={() => {
-            setJobType("healer");
+            setJobType("Healer");
             setJobArray(healers);
           }}
         >

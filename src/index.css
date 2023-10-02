@@ -1,0 +1,90 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  box-sizing: border-box;
+
+  color-scheme: light dark;
+  color: #242424;
+  background-color: crimson;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  
+  box-shadow: inset -250px -250px 1700px 10px rgba(0, 0, 0, 0.897), inset 250px 250px 1700px 10px rgba(0, 0, 0, 0.897);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: .5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /*background-color: rgba(0, 0, 0, 0.5);*/
+  background: none;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: #242424;
+}
+button:hover {
+  border-color: #242424;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+  border: 2px solid rgb(255, 0, 51);
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  text-align: center
+}
+
+
+
+#emblem {
+  width: 4em;
+  height: 4em;
+  margin-bottom: 2em;
+}
+
+.jobTypeBtn, .jobTypeBtn img {
+  width: 3em;
+  height: 3em;
+  margin-top: .7em;
+  margin-left: .2em;
+  padding: 0;
+  border: none;
+}
+
+@media (max-width: 1200px) {
+  body {
+    box-shadow: inset -150px -150px 1300px 5px rgba(0, 0, 0, 0.897), inset 150px 150px 1300px 5px rgba(0, 0, 0, 0.897);
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    box-shadow: inset -10px -10px 1300px 5px rgba(0, 0, 0, 0.897), inset 10px 10px 1300px 5px rgba(0, 0, 0, 0.897);
+  }
+}

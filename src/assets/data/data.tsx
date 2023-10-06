@@ -1,217 +1,237 @@
+import WARIco from "../FFXIVIconsJobIcons/01_TANK/Job/Warrior.png";
+import GNBIco from "../FFXIVIconsJobIcons/01_TANK/Job/Gunbreaker.png";
+import DRKIco from "../FFXIVIconsJobIcons/01_TANK/Job/DarkKnight.png";
+import PLDIco from "../FFXIVIconsJobIcons/01_TANK/Job/Paladin.png";
+import SGEIco from "../FFXIVIconsJobIcons/02_HEALER/Job/Sage.png";
+import WHMIco from "../FFXIVIconsJobIcons/02_HEALER/Job/WhiteMage.png";
+import ASTIco from "../FFXIVIconsJobIcons/02_HEALER/Job/Astrologian.png";
+import SCHIco from "../FFXIVIconsJobIcons/02_HEALER/Job/Scholar.png";
+import RPRIco from "../FFXIVIconsJobIcons/03_DPS/Job/Reaper.png";
+import SAMIco from "../FFXIVIconsJobIcons/03_DPS/Job/Samurai.png";
+import DRGIco from "../FFXIVIconsJobIcons/03_DPS/Job/Dragoon.png";
+import NINIco from "../FFXIVIconsJobIcons/03_DPS/Job/Ninja.png";
+import MNKIco from "../FFXIVIconsJobIcons/03_DPS/Job/Monk.png";
+import DNCIco from "../FFXIVIconsJobIcons/03_DPS/Job/Dancer.png";
+import MCHIco from "../FFXIVIconsJobIcons/03_DPS/Job/Machinist.png";
+import BRDIco from "../FFXIVIconsJobIcons/03_DPS/Job/Bard.png";
+import SMNIco from "../FFXIVIconsJobIcons/03_DPS/Job/Summoner.png";
+import RDMIco from "../FFXIVIconsJobIcons/03_DPS/Job/RedMage.png";
+import BLMIco from "../FFXIVIconsJobIcons/03_DPS/Job/BlackMage.png";
+
 const jobs = [
   {
     jobName: "WAR",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/01_TANK/Job/Warrior.png",
+    jobIcon: WARIco,
   },
   {
     jobName: "GNB",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/01_TANK/Job/Gunbreaker.png",
+    jobIcon: GNBIco,
   },
   {
     jobName: "DRK",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/01_TANK/Job/DarkKnight.png",
+    jobIcon: DRKIco,
   },
   {
     jobName: "PLD",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/01_TANK/Job/Paladin.png",
+    jobIcon: PLDIco,
   },
   {
     jobName: "SGE",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/02_HEALER/Job/Sage.png",
+    jobIcon: SGEIco,
   },
   {
     jobName: "WHM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/02_HEALER/Job/WhiteMage.png",
+    jobIcon: WHMIco,
   },
   {
     jobName: "AST",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/02_HEALER/Job/Astrologian.png",
+    jobIcon: ASTIco,
   },
   {
     jobName: "SCH",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/02_HEALER/Job/Scholar.png",
+    jobIcon: SCHIco,
   },
   {
     jobName: "RPR",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Reaper.png",
+    jobIcon: RPRIco,
   },
   {
     jobName: "SAM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Samurai.png",
+    jobIcon: SAMIco,
   },
   {
     jobName: "DRG",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Dragoon.png",
+    jobIcon: DRGIco,
   },
   {
     jobName: "NIN",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Ninja.png",
+    jobIcon: NINIco,
   },
   {
     jobName: "MNK",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Monk.png",
+    jobIcon: MNKIco,
   },
   {
     jobName: "DNC",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Dancer.png",
+    jobIcon: DNCIco,
   },
   {
     jobName: "MCH",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Machinist.png",
+    jobIcon: MCHIco,
   },
   {
     jobName: "BRD",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Bard.png",
+    jobIcon: BRDIco,
   },
   {
     jobName: "SMN",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Summoner.png",
+    jobIcon: SMNIco,
   },
   {
     jobName: "RDM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/RedMage.png",
+    jobIcon: RDMIco,
   },
   {
     jobName: "BLM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/BlackMage.png",
+    jobIcon: BLMIco,
   },
 ];
 
 const tanks = [
   {
     jobName: "WAR",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/01_TANK/Job/Warrior.png",
+    jobIcon: WARIco,
   },
   {
     jobName: "GNB",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/01_TANK/Job/Gunbreaker.png",
+    jobIcon: GNBIco,
   },
   {
     jobName: "DRK",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/01_TANK/Job/DarkKnight.png",
+    jobIcon: DRKIco,
   },
   {
     jobName: "PLD",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/01_TANK/Job/Paladin.png",
+    jobIcon: PLDIco,
   },
 ];
 
 const healers = [
   {
     jobName: "SGE",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/02_HEALER/Job/Sage.png",
+    jobIcon: SGEIco,
   },
   {
     jobName: "WHM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/02_HEALER/Job/WhiteMage.png",
+    jobIcon: WHMIco,
   },
   {
     jobName: "AST",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/02_HEALER/Job/Astrologian.png",
+    jobIcon: ASTIco,
   },
   {
     jobName: "SCH",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/02_HEALER/Job/Scholar.png",
+    jobIcon: SCHIco,
   },
 ];
 
 const DPS = [
   {
     jobName: "RPR",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Reaper.png",
+    jobIcon: RPRIco,
   },
   {
     jobName: "SAM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Samurai.png",
+    jobIcon: SAMIco,
   },
   {
     jobName: "DRG",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Dragoon.png",
+    jobIcon: DRGIco,
   },
   {
     jobName: "NIN",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Ninja.png",
+    jobIcon: NINIco,
   },
   {
     jobName: "MNK",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Monk.png",
+    jobIcon: MNKIco,
   },
   {
     jobName: "DNC",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Dancer.png",
+    jobIcon: DNCIco,
   },
   {
     jobName: "MCH",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Machinist.png",
+    jobIcon: MCHIco,
   },
   {
     jobName: "BRD",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Bard.png",
+    jobIcon: BRDIco,
   },
   {
     jobName: "SMN",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Summoner.png",
+    jobIcon: SMNIco,
   },
   {
     jobName: "RDM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/RedMage.png",
+    jobIcon: RDMIco,
   },
   {
     jobName: "BLM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/BlackMage.png",
+    jobIcon: BLMIco,
   },
 ];
 
 const melee = [
   {
     jobName: "RPR",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Reaper.png",
+    jobIcon: RPRIco,
   },
   {
     jobName: "SAM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Samurai.png",
+    jobIcon: SAMIco,
   },
   {
     jobName: "DRG",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Dragoon.png",
+    jobIcon: DRGIco,
   },
   {
     jobName: "NIN",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Ninja.png",
+    jobIcon: NINIco,
   },
   {
     jobName: "MNK",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Monk.png",
+    jobIcon: MNKIco,
   },
 ];
 
 const ranged = [
   {
     jobName: "DNC",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Dancer.png",
+    jobIcon: DNCIco,
   },
   {
     jobName: "MCH",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Machinist.png",
+    jobIcon: MCHIco,
   },
   {
     jobName: "BRD",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Bard.png",
+    jobIcon: BRDIco,
   },
 ];
 
 const magic = [
   {
     jobName: "SMN",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/Summoner.png",
+    jobIcon: SMNIco,
   },
   {
     jobName: "RDM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/RedMage.png",
+    jobIcon: RDMIco,
   },
   {
     jobName: "BLM",
-    jobIcon: "./src/assets/FFXIVIconsJobIcons/03_DPS/Job/BlackMage.png",
+    jobIcon: BLMIco,
   },
 ];
 

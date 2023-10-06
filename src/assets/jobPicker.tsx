@@ -10,20 +10,22 @@ import MagicIco from "./FFXIVIconsJobIcons/Magic_Ranged_DPS_Icon_1.png";
 import TankIco from "./FFXIVIconsJobIcons/00_ROLE/TankRole.png";
 import HealerIco from "./FFXIVIconsJobIcons/00_ROLE/HealerRole.png";
 import meteor from "./FFXIVMeteo.svg";
-import waitRoll from "./FFXIVIconsJobIcons/05_GATHERER/Fisher.png";
+import rollIco from "./FFXIVIconsJobIcons/05_GATHERER/Fisher.png";
 
 export default function RandomJob() {
   const [index, setIndex] = useState(0);
   const [vis, setVis] = useState(false);
   const [first, isFirst] = useState(true);
-  const [jobType, setJobType] = useState("any");
+  const [jobType, setJobType] = useState("");
   const [jobArray, setJobArray] = useState(jobs);
   const [rolling, setRolling] = useState(false);
+  const [rollPrep, setRollPrep] = useState(false);
 
   function handleRandomclick() {
     setVis(true);
     isFirst(false);
     setRolling(true);
+    setRollPrep(false);
 
     setTimeout(() => {
       let randomNumber = 0;
@@ -83,18 +85,19 @@ export default function RandomJob() {
     } else {
       setIndex(magicNumber(18, 0));
     }*/
-    console.log("clicked roll", jobType, index, jobArray);
+
+    console.log("clicked roll", jobType, index, jobArray, jobArray[index].jobName);
   }
 
   return (
     <>
       <h1>{first ? "What are we going to play today?" : "Let's play"}</h1>
       <h2 style={{ visibility: vis ? "visible" : "hidden" }} id="subheader">
-        {rolling ? "Rolling" : jobArray[index].jobName}
+        {rolling ? "Rolling" : rollPrep ? "Please roll:" : jobArray[index].jobName}
       </h2>
       <img
-        className={rolling ? "roll" : "rolled"}
-        src={first ? meteor : rolling ? waitRoll : jobArray[index].jobIcon}
+        className={rolling ? "roll" : rollPrep ? "rollPrep" : "rolled"}
+        src={first ? meteor : rolling ? rollIco : rollPrep ? rollIco : jobArray[index].jobIcon}
         alt=""
         id="emblem"
       />
@@ -108,51 +111,73 @@ export default function RandomJob() {
       <div className="jobTypes">
         <button
           onClick={() => {
-            setJobType("any"), setJobArray(jobs);
+            setRollPrep(true),
+              setIndex(0),
+              setJobType("any"),
+              setJobArray(jobs),
+              handleRandomclick;
           }}
         >
           <img src={AllRounderIco} title="Allrounder" />
         </button>
         <button
           onClick={() => {
-            setJobType("DPS");
-            setJobArray(DPS);
+            setRollPrep(true), setIndex(0), setJobType("DPS"), setJobArray(DPS), handleRandomclick;
           }}
         >
           <img src={DPSIco} title="DPS" />
         </button>
         <button
           onClick={() => {
-            setJobType("Melee"), setJobArray(melee);
+            setRollPrep(true),
+              setIndex(0),
+              setJobType("Melee"),
+              setJobArray(melee),
+              handleRandomclick;
           }}
         >
           <img src={MeleeIco} title="Melee" />
         </button>
         <button
           onClick={() => {
-            setJobType("Ranged"), setJobArray(ranged);
+            setRollPrep(true),
+              setIndex(0),
+              setJobType("Ranged"),
+              setJobArray(ranged),
+              handleRandomclick;
           }}
         >
           <img src={RangedIco} title="Ranged" />
         </button>
         <button
           onClick={() => {
-            setJobType("Magic"), setJobArray(magic);
+            setRollPrep(true),
+              setIndex(0),
+              setJobType("Magic"),
+              setJobArray(magic),
+              handleRandomclick;
           }}
         >
           <img src={MagicIco} title="Magic" />
         </button>
         <button
           onClick={() => {
-            setJobType("Tank"), setJobArray(tanks);
+            setRollPrep(true),
+              setIndex(0),
+              setJobType("Tank"),
+              setJobArray(tanks),
+              handleRandomclick;
           }}
         >
           <img src={TankIco} title="Tank" />
         </button>
         <button
           onClick={() => {
-            setJobType("Healer");
-            setJobArray(healers);
+            setRollPrep(true),
+              setIndex(0),
+              setJobType("Healer"),
+              setJobArray(healers),
+              handleRandomclick;
           }}
         >
           <img src={HealerIco} title="Healer" />

@@ -39,7 +39,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  /*background-color: rgba(0, 0, 0, 0.5);*/
   background: none;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -73,10 +72,6 @@ button:focus-visible {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-
-/* .rolled {
-  transform: rotate(0deg);
-} */
 
 .jobTypeBtn,
 .jobTypeBtn img {

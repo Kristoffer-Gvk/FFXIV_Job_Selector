@@ -1,7 +1,8 @@
-//import jobs from "./data/data";
+//imports
 import { magicNumber } from "./utility/utility";
 import { jobs, tanks, healers, DPS, melee, ranged, magic } from "./data/data";
 import { useState } from "react";
+//image imports
 import AllRounderIco from "./FFXIVIconsJobIcons/All-Rounder_Icon_1.png";
 import DPSIco from "./FFXIVIconsJobIcons/00_ROLE/DPSRole.png";
 import MeleeIco from "./FFXIVIconsJobIcons/Melee_DPS_Icon_1.png";
@@ -15,7 +16,7 @@ import rollIco from "./FFXIVIconsJobIcons/05_GATHERER/Fisher.png";
 export default function RandomJob() {
   const [index, setIndex] = useState(0);
   const [vis, setVis] = useState(false);
-  const [first, isFirst] = useState(true);
+  const [start, isStart] = useState(true);
   const [jobType, setJobType] = useState("");
   const [jobArray, setJobArray] = useState(jobs);
   const [rolling, setRolling] = useState(false);
@@ -27,7 +28,7 @@ export default function RandomJob() {
 
   function handleRandomclick() {
     setVis(true);
-    isFirst(false);
+    isStart(false);
     setRolling(true);
     setRollPrep(false);
 
@@ -79,24 +80,40 @@ export default function RandomJob() {
 
   return (
     <>
-      <h1>{first ? "What are we going to play today?" : "Let's play"}</h1>
+      <h1>
+        {start
+          ? "What are we going to play today?"
+          : rolling
+          ? "Rolling, Rolling,"
+          : rollPrep
+          ? "Lets Roll!"
+          : "Let's play"}
+      </h1>
       <h2 style={{ visibility: vis ? "visible" : "hidden" }} id="subheader">
+        {/* Are we rolling? State it. Not the case? Are we preparing for a roll? Prompt user to roll. Not the case? Tell the user which job they got. */}
         {rolling ? "Rolling" : rollPrep ? "Please roll:" : jobArray[index].jobName}
       </h2>
       <img
-        className={rolling ? "roll" : rollPrep ? "rollPrep" : "rolled"}
-        src={first ? meteor : rolling ? rollIco : rollPrep ? rollIco : jobArray[index].jobIcon}
+        //Are we rolling? Set class to "roll" for rolling animation. Not the case? Turn the "roll" class off.
+        className={rolling ? "roll" : ""}
+        //Is this the first load of the page? We'll start out with the FFXIV emblem, the meteor. Not the case? Are we rolling or preparing for a roll? Set the emblem to the neutral emblem. Not the case? a job should have been selected, so display its icon.
+        src={start ? meteor : rolling ? rollIco : rollPrep ? rollIco : jobArray[index].jobIcon}
         alt=""
         id="emblem"
       />
       <button onClick={handleRandomclick}>
         {!jobType
-          ? "Please pick a category first"
-          : first
+          ? //has a jobtype been chosen? If not prompt the user to pick a category
+            "Please pick a category from the icons below first"
+          : //Is this the first roll? Tell the user they can now roll for a job in their chosen category, plain text in case they don't know what they have picked (this application is intended for players of FFXIV who know what these icons are)
+          start
           ? `Roll for ${jobType} job`
-          : `Try again for a different ${jobType} job`}
+          : //Otherwise tell the user they can roll again in the same category, or a different one if they've chosen a different category
+            `Try again for a different ${jobType} job`}
       </button>
-      <div className="jobTypes">
+      <div
+        className="jobTypes" /* buttons that reset some states and changes categories, which entails changing which array to use and the jobtype to the corresponding type */
+      >
         <button
           onClick={() => {
             prepRoll(), setJobType("any"), setJobArray(jobs);

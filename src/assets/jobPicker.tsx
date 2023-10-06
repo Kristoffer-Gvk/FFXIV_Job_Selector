@@ -101,7 +101,7 @@ export default function RandomJob() {
         alt=""
         id="emblem"
       />
-      <button onClick={handleRandomclick}>
+      <button className="randBtn" onClick={handleRandomclick}>
         {!jobType
           ? //has a jobtype been chosen? If not prompt the user to pick a category
             "Please pick a category from the icons below first"

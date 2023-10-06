@@ -16,7 +16,7 @@ export default function RandomJob() {
   const [index, setIndex] = useState(0);
   const [vis, setVis] = useState(false);
   const [first, isFirst] = useState(true);
-  const [jobType, setJobType] = useState("");
+  const [jobType, setJobType] = useState("any");
   const [jobArray, setJobArray] = useState(jobs);
   const [rolling, setRolling] = useState(false);
 
@@ -66,7 +66,7 @@ export default function RandomJob() {
         default:
           break;
       }
-    }, 2000);
+    }, 1000);
 
     /*if (jobType === "DPS") {
       setIndex(magicNumber(10, 0));

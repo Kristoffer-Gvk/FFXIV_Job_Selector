@@ -68,12 +68,15 @@ button:focus-visible {
 }
 
 .roll {
-  transform: rotate(8765432deg) infinite;
+  animation-name: spin;
+  animation-duration: 6ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-.rolled {
+/* .rolled {
   transform: rotate(0deg);
-}
+} */
 
 .jobTypeBtn,
 .jobTypeBtn img {
@@ -96,5 +99,14 @@ button:focus-visible {
   body {
     box-shadow: inset -10px -10px 1300px 5px rgba(0, 0, 0, 0.897),
       inset 10px 10px 1300px 5px rgba(0, 0, 0, 0.897);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

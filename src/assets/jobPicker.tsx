@@ -21,6 +21,10 @@ export default function RandomJob() {
   const [rolling, setRolling] = useState(false);
   const [rollPrep, setRollPrep] = useState(false);
 
+  function prepRoll() {
+    return setRollPrep(true), setIndex(0);
+  }
+
   function handleRandomclick() {
     setVis(true);
     isFirst(false);
@@ -32,59 +36,43 @@ export default function RandomJob() {
       switch (jobType) {
         case "any":
           setRolling(false);
-          randomNumber = magicNumber(18, 0);
+          randomNumber = magicNumber(19, 0);
           setIndex(randomNumber);
           break;
         case "DPS":
           setRolling(false);
-          randomNumber = magicNumber(10, 0); /*18, 8*/
+          randomNumber = magicNumber(11, 0); /*18, 8*/
           setIndex(randomNumber);
           break;
         case "Melee":
           setRolling(false);
-          randomNumber = magicNumber(4, 0); /*12, 8*/
+          randomNumber = magicNumber(5, 0); /*12, 8*/
           setIndex(randomNumber);
           break;
         case "Ranged":
           setRolling(false);
-          randomNumber = magicNumber(2, 0); /*15, 13 */
+          randomNumber = magicNumber(3, 0); /*15, 13 */
           setIndex(randomNumber);
           break;
         case "Magic":
           setRolling(false);
-          randomNumber = magicNumber(2, 0); /*18, 16 */
+          randomNumber = magicNumber(3, 0); /*18, 16 */
           setIndex(randomNumber);
           break;
         case "Tank":
           setRolling(false);
-          randomNumber = magicNumber(3, 0); /* */
+          randomNumber = magicNumber(4, 0); /* */
           setIndex(randomNumber);
           break;
         case "Healer":
           setRolling(false);
-          randomNumber = magicNumber(3, 0); /* 7, 4*/
+          randomNumber = magicNumber(4, 0); /* 7, 4*/
           setIndex(randomNumber);
           break;
         default:
           break;
       }
     }, 1000);
-
-    /*if (jobType === "DPS") {
-      setIndex(magicNumber(10, 0));
-    } else if (jobType === "Melee") {
-      setIndex(magicNumber(4, 0));
-    } else if (jobType === "Ranged") {
-      setIndex(magicNumber(2, 0));
-    } else if (jobType === "Magic") {
-      setIndex(magicNumber(2, 0));
-    } else if (jobType === "Tank") {
-      setIndex(magicNumber(3, 0));
-    } else if (jobType === "Healer") {
-      setIndex(Math.floor(Math.random() * 3) + 0);
-    } else {
-      setIndex(magicNumber(18, 0));
-    }*/
 
     console.log("clicked roll", jobType, index, jobArray, jobArray[index].jobName);
   }
@@ -111,73 +99,49 @@ export default function RandomJob() {
       <div className="jobTypes">
         <button
           onClick={() => {
-            setRollPrep(true),
-              setIndex(0),
-              setJobType("any"),
-              setJobArray(jobs),
-              handleRandomclick;
+            prepRoll(), setJobType("any"), setJobArray(jobs);
           }}
         >
           <img src={AllRounderIco} title="Allrounder" />
         </button>
         <button
           onClick={() => {
-            setRollPrep(true), setIndex(0), setJobType("DPS"), setJobArray(DPS), handleRandomclick;
+            prepRoll(), setJobType("DPS"), setJobArray(DPS);
           }}
         >
           <img src={DPSIco} title="DPS" />
         </button>
         <button
           onClick={() => {
-            setRollPrep(true),
-              setIndex(0),
-              setJobType("Melee"),
-              setJobArray(melee),
-              handleRandomclick;
+            prepRoll(), setJobType("Melee"), setJobArray(melee);
           }}
         >
           <img src={MeleeIco} title="Melee" />
         </button>
         <button
           onClick={() => {
-            setRollPrep(true),
-              setIndex(0),
-              setJobType("Ranged"),
-              setJobArray(ranged),
-              handleRandomclick;
+            prepRoll(), setJobType("Ranged"), setJobArray(ranged);
           }}
         >
           <img src={RangedIco} title="Ranged" />
         </button>
         <button
           onClick={() => {
-            setRollPrep(true),
-              setIndex(0),
-              setJobType("Magic"),
-              setJobArray(magic),
-              handleRandomclick;
+            prepRoll(), setJobType("Magic"), setJobArray(magic);
           }}
         >
           <img src={MagicIco} title="Magic" />
         </button>
         <button
           onClick={() => {
-            setRollPrep(true),
-              setIndex(0),
-              setJobType("Tank"),
-              setJobArray(tanks),
-              handleRandomclick;
+            prepRoll(), setJobType("Tank"), setJobArray(tanks);
           }}
         >
           <img src={TankIco} title="Tank" />
         </button>
         <button
           onClick={() => {
-            setRollPrep(true),
-              setIndex(0),
-              setJobType("Healer"),
-              setJobArray(healers),
-              handleRandomclick;
+            prepRoll(), setJobType("Healer"), setJobArray(healers);
           }}
         >
           <img src={HealerIco} title="Healer" />

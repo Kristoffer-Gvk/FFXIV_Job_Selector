@@ -22,8 +22,9 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  
-  box-shadow: inset -250px -250px 1700px 10px rgba(0, 0, 0, 0.897), inset 250px 250px 1700px 10px rgba(0, 0, 0, 0.897);
+
+  box-shadow: inset -250px -250px 1700px 10px rgba(0, 0, 0, 0.897),
+    inset 250px 250px 1700px 10px rgba(0, 0, 0, 0.897);
 }
 
 h1 {
@@ -34,7 +35,7 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: .5em;
+  padding: 0.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -57,10 +58,8 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   place-items: center;
-  text-align: center
+  text-align: center;
 }
-
-
 
 #emblem {
   width: 4em;
@@ -68,23 +67,34 @@ button:focus-visible {
   margin-bottom: 2em;
 }
 
-.jobTypeBtn, .jobTypeBtn img {
+.roll {
+  transform: rotate(8765432deg) infinite;
+}
+
+.rolled {
+  transform: rotate(0deg);
+}
+
+.jobTypeBtn,
+.jobTypeBtn img {
   width: 3em;
   height: 3em;
-  margin-top: .7em;
-  margin-left: .2em;
+  margin-top: 0.7em;
+  margin-left: 0.2em;
   padding: 0;
   border: none;
 }
 
 @media (max-width: 1200px) {
   body {
-    box-shadow: inset -150px -150px 1300px 5px rgba(0, 0, 0, 0.897), inset 150px 150px 1300px 5px rgba(0, 0, 0, 0.897);
+    box-shadow: inset -150px -150px 1300px 5px rgba(0, 0, 0, 0.897),
+      inset 150px 150px 1300px 5px rgba(0, 0, 0, 0.897);
   }
 }
 
 @media (max-width: 900px) {
   body {
-    box-shadow: inset -10px -10px 1300px 5px rgba(0, 0, 0, 0.897), inset 10px 10px 1300px 5px rgba(0, 0, 0, 0.897);
+    box-shadow: inset -10px -10px 1300px 5px rgba(0, 0, 0, 0.897),
+      inset 10px 10px 1300px 5px rgba(0, 0, 0, 0.897);
   }
 }

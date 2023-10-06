@@ -10,6 +10,7 @@ import MagicIco from "./FFXIVIconsJobIcons/Magic_Ranged_DPS_Icon_1.png";
 import TankIco from "./FFXIVIconsJobIcons/00_ROLE/TankRole.png";
 import HealerIco from "./FFXIVIconsJobIcons/00_ROLE/HealerRole.png";
 import meteor from "./FFXIVMeteo.svg";
+import waitRoll from "./FFXIVIconsJobIcons/05_GATHERER/Fisher.png";
 
 export default function RandomJob() {
   const [index, setIndex] = useState(0);
@@ -17,38 +18,56 @@ export default function RandomJob() {
   const [first, isFirst] = useState(true);
   const [jobType, setJobType] = useState("");
   const [jobArray, setJobArray] = useState(jobs);
+  const [rolling, setRolling] = useState(false);
 
   function handleRandomclick() {
     setVis(true);
     isFirst(false);
+    setRolling(true);
 
-    let randomNumber = 0;
-    switch (jobType) {
-      case "any":
-        randomNumber = magicNumber(18, 0);
-        setIndex(randomNumber);
-        break;
-      case "DPS":
-        setIndex(magicNumber(10, 0)); /*18, 8*/
-        break;
-      case "Melee":
-        setIndex(magicNumber(4, 0)); /*12, 8*/
-        break;
-      case "Ranged":
-        setIndex(magicNumber(2, 0)); /*15, 13 */
-        break;
-      case "Magic":
-        setIndex(magicNumber(2, 0)); /*18, 16 */
-        break;
-      case "Tank":
-        setIndex(magicNumber(3, 0)); /* */
-        break;
-      case "Healer":
-        setIndex(magicNumber(3, 0)); /* 7, 4*/
-        break;
-      default:
-        break;
-    }
+    setTimeout(() => {
+      let randomNumber = 0;
+      switch (jobType) {
+        case "any":
+          setRolling(false);
+          randomNumber = magicNumber(18, 0);
+          setIndex(randomNumber);
+          break;
+        case "DPS":
+          setRolling(false);
+          randomNumber = magicNumber(10, 0); /*18, 8*/
+          setIndex(randomNumber);
+          break;
+        case "Melee":
+          setRolling(false);
+          randomNumber = magicNumber(4, 0); /*12, 8*/
+          setIndex(randomNumber);
+          break;
+        case "Ranged":
+          setRolling(false);
+          randomNumber = magicNumber(2, 0); /*15, 13 */
+          setIndex(randomNumber);
+          break;
+        case "Magic":
+          setRolling(false);
+          randomNumber = magicNumber(2, 0); /*18, 16 */
+          setIndex(randomNumber);
+          break;
+        case "Tank":
+          setRolling(false);
+          randomNumber = magicNumber(3, 0); /* */
+          setIndex(randomNumber);
+          break;
+        case "Healer":
+          setRolling(false);
+          randomNumber = magicNumber(3, 0); /* 7, 4*/
+          setIndex(randomNumber);
+          break;
+        default:
+          break;
+      }
+    }, 2000);
+
     /*if (jobType === "DPS") {
       setIndex(magicNumber(10, 0));
     } else if (jobType === "Melee") {
@@ -71,9 +90,14 @@ export default function RandomJob() {
     <>
       <h1>{first ? "What are we going to play today?" : "Let's play"}</h1>
       <h2 style={{ visibility: vis ? "visible" : "hidden" }} id="subheader">
-        {jobArray[index].jobName}
+        {rolling ? "Rolling" : jobArray[index].jobName}
       </h2>
-      <img src={first ? meteor : jobArray[index].jobIcon} alt="" id="emblem" />
+      <img
+        className={rolling ? "roll" : "rolled"}
+        src={first ? meteor : rolling ? waitRoll : jobArray[index].jobIcon}
+        alt=""
+        id="emblem"
+      />
       <button onClick={handleRandomclick}>
         {!jobType
           ? "Please pick a category first"

@@ -100,8 +100,14 @@ button {
 
 @media (max-width: 900px) {
   body {
-    box-shadow: inset -10px -10px 1300px 5px rgba(0, 0, 0, 0.897),
-      inset 10px 10px 1300px 5px rgba(0, 0, 0, 0.897);
+    box-shadow: inset -10px -10px 1000px 5px rgba(0, 0, 0, 0.897),
+      inset 10px 10px 1000px 5px rgba(0, 0, 0, 0.897);
+  }
+}
+@media (max-width: 600px) {
+  body {
+    box-shadow: inset -10px -10px 50px 5px rgba(0, 0, 0, 0.897),
+      inset 10px 10px 50px 5px rgba(0, 0, 0, 0.897);
   }
 }
 

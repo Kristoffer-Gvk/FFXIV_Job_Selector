@@ -21,8 +21,14 @@
 }
 
 #root {
-  min-height: 100%;
-  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+html {
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 body {
@@ -30,9 +36,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 320px;
+  min-width: 100vw;
   min-height: 100vh;
-
+  position: relative;
   box-shadow: inset -250px -250px 1700px 10px rgba(0, 0, 0, 0.897),
     inset 250px 250px 1700px 10px rgba(0, 0, 0, 0.897);
 }
@@ -53,6 +59,14 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
   color: #242424;
+}
+
+#settings-btn {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 10%;
+  right: 20%;
 }
 
 .randBtn {
@@ -101,6 +115,24 @@ button {
   transform: scale(1.1);
 }
 
+.hideMenuNav {
+  display: none;
+}
+.showMenuNav {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #222222f9;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 @media (min-width: 1201px) {
   body {
     box-shadow: inset -150px -150px 1300px 5px rgba(0, 0, 0, 0.897),
@@ -119,6 +151,11 @@ button {
   body {
     box-shadow: inset -10px -10px 50px 5px rgba(0, 0, 0, 0.897),
       inset 10px 10px 50px 5px rgba(0, 0, 0, 0.897);
+  }
+
+  #settings-btn {
+    top: 45%;
+    right: 7%;
   }
 }
 

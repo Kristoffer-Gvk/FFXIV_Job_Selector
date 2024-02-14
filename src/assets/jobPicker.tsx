@@ -75,7 +75,7 @@ export default function RandomJob() {
       }
     }, 1000);
 
-    console.log("clicked roll", jobType, index, jobArray, jobArray[index].jobName);
+    //console.log("clicked roll", jobType, index, jobArray, jobArray[index].jobName);
   }
 
   return (

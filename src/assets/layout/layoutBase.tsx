@@ -1,13 +1,12 @@
 //import Btns from "./Btns"
-import RandomJob from "../jobPicker"
+import RandomJob from "../jobPicker";
 
-function LayoutBase () {
-
-    return (
+function LayoutBase() {
+  return (
     <>
-        <RandomJob />
+      <RandomJob />
     </>
-    )
+  );
 }
 
-export default LayoutBase
+export default LayoutBase;

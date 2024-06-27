@@ -37,17 +37,17 @@ export default function RandomJob() {
       switch (jobType) {
         case "any":
           setRolling(false);
-          randomNumber = magicNumber(19, 0);
+          randomNumber = magicNumber(21, 0);
           setIndex(randomNumber);
           break;
         case "DPS":
           setRolling(false);
-          randomNumber = magicNumber(11, 0); /*18, 8*/
+          randomNumber = magicNumber(13, 0); /*18, 8*/
           setIndex(randomNumber);
           break;
         case "Melee":
           setRolling(false);
-          randomNumber = magicNumber(5, 0); /*12, 8*/
+          randomNumber = magicNumber(6, 0); /*12, 8*/
           setIndex(randomNumber);
           break;
         case "Ranged":
@@ -57,7 +57,7 @@ export default function RandomJob() {
           break;
         case "Magic":
           setRolling(false);
-          randomNumber = magicNumber(3, 0); /*18, 16 */
+          randomNumber = magicNumber(4, 0); /*18, 16 */
           setIndex(randomNumber);
           break;
         case "Tank":

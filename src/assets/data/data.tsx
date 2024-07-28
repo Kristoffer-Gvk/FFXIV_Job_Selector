@@ -8,7 +8,7 @@ import ASTIco from "../FFXIVIconsJobIcons/02_HEALER/Job/Astrologian.png";
 import SCHIco from "../FFXIVIconsJobIcons/02_HEALER/Job/Scholar.png";
 import RPRIco from "../FFXIVIconsJobIcons/03_DPS/Job/Reaper.png";
 import SAMIco from "../FFXIVIconsJobIcons/03_DPS/Job/Samurai.png";
-import VPRIco from "../FFXIVIconsJobIcons/03_DPS/Job/Viper_PH.png";
+import VPRIco from "../FFXIVIconsJobIcons/03_DPS/Job/Viper.png";
 import DRGIco from "../FFXIVIconsJobIcons/03_DPS/Job/Dragoon.png";
 import NINIco from "../FFXIVIconsJobIcons/03_DPS/Job/Ninja.png";
 import MNKIco from "../FFXIVIconsJobIcons/03_DPS/Job/Monk.png";
@@ -17,7 +17,7 @@ import MCHIco from "../FFXIVIconsJobIcons/03_DPS/Job/Machinist.png";
 import BRDIco from "../FFXIVIconsJobIcons/03_DPS/Job/Bard.png";
 import SMNIco from "../FFXIVIconsJobIcons/03_DPS/Job/Summoner.png";
 import RDMIco from "../FFXIVIconsJobIcons/03_DPS/Job/RedMage.png";
-import PCTIco from "../FFXIVIconsJobIcons/03_DPS/Job/Pictomancer_PH.png";
+import PCTIco from "../FFXIVIconsJobIcons/03_DPS/Job/Pictomancer.png";
 import BLMIco from "../FFXIVIconsJobIcons/03_DPS/Job/BlackMage.png";
 
 const jobs = [
